@@ -1,0 +1,18 @@
+.Login-button {
+    display: flex;
+    justify-content: flex-end;
+    margin:20px;
+}
+
+.logo-img {
+    display: flex;
+    justify-content: center;
+}
+
+.menuList {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 10px;
+    gap:5px;
+}
