@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProductAll from './component/ProductAll';
 import Login from './component/Login';
 import ProductDetail from './component/ProductDetail';
 import Nav from './Navibar/Nav';
+import PrivateRoute from './Route/PrivateRoute';
 
 // 1. 전체 상품페이지, 로그인 페이지, 상세상품 페이지
 // 2. 로그인 버튼을 누르면 로그인 화면이 나온다. 
@@ -17,14 +18,17 @@ import Nav from './Navibar/Nav';
 
 
 function App() {
+  let [authenticate, setAuthenticate] = useState(false)
+
+
   return (
     <div>
-      <Nav />
+      <Nav authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/ProductDetail/:id"
-          element={<ProductDetail />} />
+        <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path="/Product/:id"
+          element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
     </div>
   );
