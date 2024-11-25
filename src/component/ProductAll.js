@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([])
+
   const getProducts = async () => {
     let url = `http://localhost:5000/products`;
     let response = await fetch(url);
@@ -12,20 +13,20 @@ const ProductAll = () => {
     setProductList(data)
   }
 
-  useEffect(() => {
-    getProducts()
-  }, [])
+useEffect (()=> {
+  getProducts();
+},[])
 
   return (
-    <div>
       <Container>
         <Row>
-          {productList.map((menu) => (
-            <Col lg={3}> <ProductCard item={menu} /></Col>
+          {productList.map((item) => (
+             <Col md={3} sm={6} xs={12} key={item.id}>
+             <ProductCard item={item} />
+           </Col>
           ))}
         </Row>
       </Container>
-    </div>
   )
 }
 

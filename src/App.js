@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProductAll from './component/ProductAll';
@@ -18,16 +18,16 @@ import PrivateRoute from './Route/PrivateRoute';
 
 
 function App() {
-  const [authenticate,setAuthenticate] = useState(false)
-  useEffect (()=>{},[]) 
+  let [authenticate, setAuthenticate] = useState(false)
+
 
   return (
     <div>
-      <Nav />
+      <Nav authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/Login" element={<Login setAuthenticate={setAuthenticate}/>} />
-        <Route path="/ProductDetail/:id"
+        <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path="/Product/:id"
           element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
     </div>

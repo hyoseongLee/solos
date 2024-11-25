@@ -14,7 +14,7 @@ const Login = ({setAuthenticate}) => {
   return (
     <Container>  
       <Form onSubmit={(event)=> loginUser(event)}>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Group className="input-box" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" />
       <Form.Text className="text-muted">
@@ -22,11 +22,11 @@ const Login = ({setAuthenticate}) => {
       </Form.Text>
     </Form.Group>
 
-    <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Group className="input-box" controlId="formBasicPassword">
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" />
     </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Group className="input-box" controlId="formBasicCheckbox">
     </Form.Group>
     <Button variant="primary" type="submit">
       로그인

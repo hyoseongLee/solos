@@ -1,13 +1,18 @@
+body {
+    font-family: sans-serif;
+}
+
 .Login-button {
     display: flex;
     justify-content: flex-end;
-    margin:20px;
+    margin: 20px;
     cursor: pointer;
 }
 
 .logo-img {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .menu-area {
@@ -20,20 +25,20 @@
     justify-content: center;
     padding: 5px;
     margin: 10px;
-    list-style-type:none;
+    list-style-type: none;
 }
 
 .menu-List li {
-    padding:10px;
+    padding: 10px;
 }
 
-.input-search {
+.insearch-search {
     display: flex;
     justify-content: flex-end;
     margin: 10px;
 }
 
-.input-box {
+.insearch-box {
     border-bottom: 1px solid gray;
     border-top: none;
     border-left: none;
@@ -52,5 +57,32 @@
 }
 
 .card {
-    margin:10px;
+    margin: 10px;
+}
+
+.Detail-box {
+    display: flex;
+    justify-content: center;
+    width: 500;
+    height: auto;
+    margin: 10px;
+}
+
+.product-img {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.product-info {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+ 
+    margin: 15px;
+    border: 1px solid gray;
+
 }
