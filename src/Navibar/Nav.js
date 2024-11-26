@@ -13,14 +13,22 @@ const Nav = () => {
         "Kids",
         "Sale"
     ];
-    
+
     const navigate = useNavigate()
     const gotoLogin = () => {
         navigate("/Login")
     }
 
+    const onCheckEnter = (event) => {
+        if (event.key === "Enter") {
+            let keyword = event.target.value;
+            //입력한 검색어를 읽어와서 url을 바꿔준다.
+            navigate(`/?q=${keyword}`)
+        }
+    }
+
     const gotoLogo = () => {
-navigate("/")
+        navigate("/")
     }
 
     return (
@@ -44,7 +52,7 @@ navigate("/")
 
             <div className='insearch-search'>
                 <FontAwesomeIcon icon={faSearch} />
-                <input className='insearch-box' placeholder='검색'></input>
+                <input type="text" className='insearch-box' placeholder='검색' onKeyPress={onCheckEnter} />
             </div>
 
             <div className='text-menu'> 회원혜택: 3만원 이상 무료배송 & 첫구매 10% 할인 </div>

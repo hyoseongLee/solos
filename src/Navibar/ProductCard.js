@@ -9,7 +9,7 @@ const ProductCard = ({ item }) => {
 
     return (
         <div className='card' onClick={showDetail}>
-            <img width={200} src={item?.img} />
+            <img src={item?.img} />
             <div>Conscious choice</div>
             <div>{item?.title}</div>
             <div>{item?.price}</div>
